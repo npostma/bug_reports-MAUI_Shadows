@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Shadow 
+        x:Key="CustomShadow"
+        Offset="0,75"
+        >
+        <Shadow.Brush>
+            <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                <GradientStop Color="Green" Offset="1.0"/>
+                <GradientStop Color="Red" Offset="0.5"/>
+                <GradientStop Color="Blue" Offset="0.1"/>
+            </LinearGradientBrush>
+        </Shadow.Brush>
+    </Shadow>
+
+    <Style x:Key="FrameWithLongShadow" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="HeightRequest" Value="125"/>
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="VerticalOptions" Value="Start"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+        <Setter Property="Shadow" Value="{DynamicResource CustomShadow}"/>
+    </Style>
+
+    <Style x:Key="BorderWithLongShadow" TargetType="Border">
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="HeightRequest" Value="125"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="VerticalOptions" Value="Start"/>
+        <Setter Property="HorizontalOptions" Value="Start"/>
+        <Setter Property="Shadow" Value="{DynamicResource CustomShadow}"/>
+    </Style>
+
+</ResourceDictionary>
